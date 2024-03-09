@@ -1,12 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import json
+
+booksData = open("books/books.json").read()
+data = json.loads(booksData)
 
 
 def index(request):
-    context = {'books':
-                {
-                    "title": "Web Development with Django - Second Edition: A definitive guide to building modern Python web applications using Django 4",
-                    "thumbnailUrl": "",
-                 }
-               }
+    context = {'books': data }
     return render(request, 'books/index.html', context)
