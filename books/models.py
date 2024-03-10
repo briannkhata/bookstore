@@ -6,14 +6,18 @@ from django.db import models
 class Book(models.Model):
     title = models.CharField(max_length=256)
     pageCount = models.IntegerField(default=0)
-    thumbnailUrl = models.CharField(max_length=256,null=True)
+    thumbnailUrl = models.CharField(max_length=256, null=True)
     shortDescription = models.TextField(null=True)
     longDescription = models.TextField(null=True)
-    #isbn = models.CharField(max_length=256,null=True)
-    #publishedDate = models.DateField()
-    #status = models.CharField(max_length=20)
-    #authors = models.ManyToManyField('Author')
-    #categories = models.ManyToManyField('Category')
-    
+    # isbn = models.CharField(max_length=256,null=True)
+    # publishedDate = models.DateField()
+    # status = models.CharField(max_length=20)
+    # authors = models.ManyToManyField('Author')
+    # categories = models.ManyToManyField('Category')
+
     def __str__(self):
         return self.title
+
+
+class Review(models.Model):
+    body = models.TextField()
