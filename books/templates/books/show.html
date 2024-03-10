@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Book Detail</title>
+    <title>{{book.title}} Details</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -13,17 +13,22 @@
   </head>
   <body>
     <section class="py-10">
-      <h1 class="text-center text-4xl">{{book.title}} Details</h1>
+      <h1 class="text-center text-4xl">{{book.title}}</h1>
+      <hr>
       <div class="flex justify-center">
         <p>
           <img src="{{book.thumbnailUrl}}" width="200" />
         </p>
       </div>
-      <p>{{boo.pageCount}}</p>
-      <p>{{boo.shortDescription}}</p>
-      <p>{{boo.longDescription}}</p>
-      <p>{{boo.page}}</p>
-     
+      <p>ISBN : {{book.isbn}}</p>
+      <br>
+      <p>Count : {{book.pageCount}}</p>
+      <p>Authors : {{book.authors|join:", "}}</p>
+      <hr>
+      <p> Description1 : {{book.shortDescription}}</p>
+      <hr>
+      <p>Description2 :{{book.longDescription}}</p>
+
     </section>
   </body>
 </html>
